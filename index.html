@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Sentiment Analyse </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f5f5f5;
+        }
+        textarea {
+            width: 100%;
+            height: 150px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .result {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <h1 style="color: coral;"> Client Sentiment Analyse </h1>
+
+    <form method="POST">
+        <textarea name="text" placeholder="Tapez votre message ici...">{{ text }}</textarea><br>
+        <input type="submit" value="Analyser">
+    </form>
+
+    {% if sentiment %}
+        <div class="result">
+            <h3>Texte : {{ text }}</h3>
+            <h3>Sentiment : {{ sentiment }}</h3>
+        </div>
+    {% endif %}
+
+</body>
+</html>
